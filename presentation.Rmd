@@ -1,0 +1,43 @@
+---
+title: "R Presentation with Plotly"
+author: "nthehai01"
+date: '2022-08-06'
+output: 
+  ioslides_presentation:
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+## Introdution
+
+In this assignment, I am going to create a web page presentation using R Markdown that features a plot created with Plotly.
+
+## Loading the data
+
+In this assignment, I will use the Iris data set from the `datasets` package.
+
+```{r}
+library(datasets)
+data(iris)
+```
+
+Take a look at some first row in this data set:
+
+```{r}
+head(iris)
+```
+
+## Plotting
+
+An interactive plot showing the correlation between the Sepal length and Petal length of each Iris species:
+
+```{r}
+library(plotly)
+fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species)
+fig
+```
+
+## This is the end of the slides
